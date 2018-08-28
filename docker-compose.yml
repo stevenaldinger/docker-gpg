@@ -1,0 +1,17 @@
+version: '3'
+services:
+  gpg:
+    container_name: gpg
+    hostname: gpg
+    image: stevenaldinger/docker-gpg:latest
+    command: ['tail', '-f', '/dev/null']
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      GNUPGHOME: "/root/.gnupg"
+      EXTERNAL_DRIVE_NAME: "USBDrive"
+    volumes:
+    - ${HOME}/.ssh:/root/.ssh
+    - ./gnupg:/gnupg/USBDrive/gnupg

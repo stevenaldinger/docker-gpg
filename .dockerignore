@@ -1,0 +1,7 @@
+# Files
+docker-compose.yml
+Dockerfile
+Makefile
+
+# Directories
+gnupg
