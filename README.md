@@ -58,3 +58,16 @@ make keys \
 ### Generate Anonymous Passwordless keys
 
 Run `make keys_anon` to generated anonymous credentials.
+
+### Print Public Key
+
+```sh
+make get_key \
+ email=drone@grinsides.com
+```
+
+### Stop the daemon
+
+```sh
+make down
+```

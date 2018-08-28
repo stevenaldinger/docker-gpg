@@ -49,3 +49,12 @@ keys:
 keys_anon:
 	@docker exec -it \
 	  gpg bash -c "/usr/local/bin/gpg-key-gen.sh anonymous"
+
+# usage:
+# make get_key \
+#  email=drone@grinsides.com
+get_key:
+	@docker exec -it \
+	  gpg bash -c "\
+	    export GNUPG_EMAIL_ADDRESS='$$email'; \
+	    /usr/local/bin/get-gpg-key.sh"
